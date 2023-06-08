@@ -1,12 +1,10 @@
 function solution(brown, yellow) {
-    var answer = [];
     for(let height = 1 ; height <= Math.sqrt(yellow) ; height++ ){
         if(yellow % height === 0) {
             const width = yellow / height
             if((height + 2) * (width + 2) === brown + yellow) return [width + 2, height + 2]
         }
     }
-    return answer;
 }
 
 
