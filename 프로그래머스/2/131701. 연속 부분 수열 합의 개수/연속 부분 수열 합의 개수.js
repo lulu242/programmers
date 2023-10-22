@@ -1,10 +1,10 @@
 function solution(elements) {
-    let answer = [];
+    let answer = new Set();
     let circle = [...elements, ...elements];
     for(let i = 1 ; i <= elements.length; i++) {
         for(let j = 0; j < elements.length; j++) {
-            answer.push(circle.slice(j, j+i).reduce((acc, cur) => acc + cur));
+            answer.add(circle.slice(j, j+i).reduce((acc, cur) => acc + cur));
         }
     }
-    return [...new Set(answer)].length;
+    return answer.size
 }
