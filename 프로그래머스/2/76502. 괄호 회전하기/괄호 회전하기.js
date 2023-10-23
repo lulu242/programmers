@@ -7,11 +7,9 @@ function solution(s) {
         for(let el of str) {
             if(bracket[el]) {
                 copy.push(el);
-            } else if(!copy[copy.length-1]) {
-                return false
             } else if(el === bracket[copy[copy.length-1]]) {
                 copy.pop()
-            }
+            } else {return false}
         }
         return copy.length === 0
     }
