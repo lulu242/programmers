@@ -14,6 +14,5 @@ function solution(answers) {
             score[2] += 1
         }
     }
-    console.log(Math.max(...score))
     return score.map((el, idx)=> Math.max(...score) === el ? idx+=1 : null).filter(el=> el)
 }
